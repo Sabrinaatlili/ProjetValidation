@@ -1,0 +1,33 @@
+/* signup.component.css */
+
+.signup-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  
+  
+  .nav-tabs {
+    margin-bottom: 20px;
+  }
+  
+  .nav-link {
+    cursor: pointer;
+  }
+  
+  .tab-content {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+   
+  }
+  input {
+    margin-bottom: 10px;
+  }
+  
+  

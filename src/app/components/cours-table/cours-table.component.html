@@ -1,0 +1,31 @@
+<table class="table table-dark ">
+    <thead >
+      <tr class="table-success">
+        <th scope="col">Cours ID</th>
+        <th scope="col"> Name</th>
+        <th scope="col">description</th>
+        <th scope="col">Durée</th>
+        <th scope="col">teacher Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cours of courses" >
+      <tr >
+        <td >{{cours._id}}</td>
+        <td> {{cours.name}}</td>
+        <td>{{cours.description}}</td>
+        <td>{{cours.dure}}</td>
+        <td>{{cours.teacher.firstName}} {{cours.teacher.lastName}}</td>
+        
+        <td>
+           
+            <button type="button" class="btn btn-success" (click)="edit()" style="margin-left: 5px;">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="delete()" style="margin-left: 5px;">Delete</button>
+            <button type="button" class="btn btn-warning" (click)="display()" style="margin-left: 5px;">Display</button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+

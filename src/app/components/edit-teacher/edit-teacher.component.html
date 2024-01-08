@@ -1,0 +1,79 @@
+<section class="our-courses" id="courses">
+
+    <div class=" text-center" style="margin-top: 30px;">
+      <div class="section-heading">
+        <h2>Validate teacher</h2>
+      </div>
+    </div>
+  
+    <div class="col-lg-12 align-self-center">
+      <!-- ****************************** Signup Form Start ********************** -->
+      <div class="signup-container">
+        <form #validateForm="ngForm" (ngSubmit) ="Edit()" >
+          <div class="row">
+            <!-- First Name -->
+            <div class=" col-lg-12">
+              <fieldset>
+                <input name="a" type="text" class="form-control" [(ngModel)]="teacher.firstName" placeholder="Fisrt Name">
+              </fieldset>
+            </div>
+            
+           
+            <!-- Adresse -->
+            <div class="col-lg-12">
+              <fieldset>
+                <input name="h" type="text" class="form-control" [(ngModel)]="teacher.adr" placeholder="Adresse">
+              </fieldset>
+            </div>
+           
+            <!-- Tél -->
+            <div class="col-lg-12">
+              <fieldset>
+                <input name="c" type="number" class="form-control" [(ngModel)]="teacher.tel" placeholder="Telephone">
+              </fieldset>
+            </div>
+        
+            <!-- email -->
+            <div class="col-lg-12">
+              <fieldset>
+                <input name="d" type="email" class="form-control" [(ngModel)]="teacher.email" placeholder="Email">
+              </fieldset>
+            </div>
+           
+            <!-- PWD -->
+            <div class="col-lg-12">
+              <fieldset>
+                <input name="e" type="password" class="form-control" [(ngModel)]="teacher.pwd" placeholder="Password">
+              </fieldset>
+            </div>
+          
+              
+          
+            <!-- Teacher Speciality -->
+            <div class="col-lg-12" >
+              <fieldset>
+                <input name="j" type="text" class="form-control" [(ngModel)]="teacher.speciality" placeholder="Speciality">
+              </fieldset>
+            </div>
+            
+         
+        
+          <!-- Button edit teacher-->
+          <div class="main-button-red text-center">
+            <div class="scroll-to-section"><a style="color: white;" >Edit Teacher</a></div>
+          </div>
+
+          <span style="color: red;">{{errorMsg}}</span>
+          
+        </div>
+      </form>
+       <!-- ******************************  Form end  ********************** -->
+      </div>
+  
+  
+      
+  
+    </div>
+  
+  </section>
+

@@ -1,0 +1,32 @@
+<table class="table table-dark ">
+    <thead >
+      <tr class="table-success">
+        <th scope="col">Student ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col"> Adresse</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tél </th>
+
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of students" >
+      <tr >
+        <td scope="row">{{student._id}}</td>
+        <td >{{student.firstName}}</td>
+        <td>{{student.firstName}}</td>
+         <td>{{student.adr}}</td>
+        <td>{{student.email}}</td>
+         <td>{{student.tel}}</td>
+        <td>
+            <button type="button" class="btn btn-success" (click)="goToEdit()">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="goToDelete()" style="margin-left: 5px;">Delete</button>
+            <button type="button" class="btn btn-warning" (click)="goToDisplay()" style="margin-left: 5px;">Display</button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+

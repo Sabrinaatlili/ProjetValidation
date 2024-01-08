@@ -1,0 +1,71 @@
+<section class="our-courses" id="courses">
+      
+    <div class=" text-center" style="margin-top: 3ng0px;">
+      <div class="section-heading align-center">
+        <h2> LOGIN </h2>
+      </div>
+    </div>
+      
+    <section class="contact-us" id="contact">
+      <div class="container col-lg-8" style="margin-top: -100px;" >
+        <div class="row">
+          
+          <div class="col-lg-12 align-self-center" >
+           
+              <div class="col-lg-12" >
+                <div id="contact"  >
+                   <!-- ****************************** Login Form Start ********************** -->
+                  <form  #loginForm="ngForm" (ngSubmit)="login()">
+                    <div class="row">
+                                        
+                       <!-- email / Tél -->
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <input name="a" type="text" class="form-control" [(ngModel)]="user.login" placeholder="Tél / Email" pattern="^\d{8}$" >
+                        </fieldset>
+                      </div>
+                      <!-- <div *ngIf="loginForm.controls['user.login'].errors?.['pattern'] && loginForm.controls['user.login'].touched">
+                        Le numéro doit contenir exactement huit chiffres.
+                      </div> -->
+                      
+                       <!-- PWD -->
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <input name="b" type="password" class="form-control" [(ngModel)]="user.pwd" placeholder="Password" >
+                        </fieldset>
+                      </div>
+                                       
+                    </div>
+                      <!-- Button Sign Up -->
+                   
+
+                    <!-- <div class="main-button-red text-center">
+                      <div class="scroll-to-section"> <a style="color: white;" > LOGIN </a></div>
+                    </div> -->
+
+
+                    <div class="form-group text-center">
+                      <button type="submit" class="btn btn-danger " value="">LOGIN</button>
+                    </div>
+
+                  </form>
+                  <span style="color: red;"> {{errorMsg}} </span>
+                   <!-- ******************************  Form end  ********************** -->
+
+                </div>
+                
+              </div>
+              
+
+
+          </div>
+         
+        </div>
+      </div>
+     
+    </section>
+
+
+</section>
+
+

@@ -1,0 +1,87 @@
+<section class="our-courses" id="courses">
+      
+    <div class=" text-center" style="margin-top: 30lpx;">
+      <div class="section-heading align-center">
+        <h2> Affecter Note To Student </h2>
+      </div>
+    </div>
+      
+    <section class="contact-us" id="contact">
+      <div class="container col-lg-8" >
+        <div class="row">
+          
+          <div class="col-lg-12 align-self-center" >
+           
+              <div class="col-lg-12" style="margin-top: -100px;" >
+                <div id="contact"  >
+                   <!-- ****************************** Add Cours Form Start ********************** -->
+                  <form  #affecterForm="ngForm" (ngSubmit)="affecterNote()">
+                    <div class="row">
+                                        
+                    
+
+
+                      <!-- Select one Student to affect -->
+
+                      <div class="form-group" style="margin-top: 30px;">
+                        <select name="studentId" id=""  class="form-control" (change)="selectStudent($event)">
+                          <option [value]="student._id" *ngFor="let student of students" style="color: black;"> {{student.firstName}} {{student.lastName}}</option>
+                        </select>
+                      </div>
+
+
+                      <!-- Select one Cours to affect -->
+
+                      <div class="form-group" style="margin-top: 30px;">
+                        <select name="coursId" id=""  class="form-control" (change)="selectCours($event)">
+                          <option [value]="cours._id" *ngFor="let cours of courses" style="color: black;"> {{cours.name}} </option>
+                        </select>
+                      </div>
+
+
+                        <!-- Note -->
+                        <div class="col-lg-12" style="margin-top: 30px;">
+                          <fieldset>
+                            <input name="a" type="text" class="form-control" [(ngModel)]="note.note" placeholder="Note" >
+                          </fieldset>
+                        </div>
+  
+                       <!-- Evaluation -->
+                       <div class="col-lg-12" style="margin-top: 20px;">
+                          <fieldset>
+                            <input name="c" type="text" class="form-control" [(ngModel)]="note.evaluation" placeholder="evaluation" >
+                          </fieldset>
+                        </div>
+
+                    </div>
+                    <span style="color: red;">{{ msgError}}</span>
+                      <!-- Button Add Cours -->
+                   
+                    <div class="form-group text-center" style="margin-top: 10px;">
+                      <button type="submit" class="btn btn-danger " value="ADD COURS">Affecter</button>
+                    </div>
+
+                  </form>
+                  
+                   <!-- ******************************  Form end  ********************** -->
+
+                </div>
+                
+              </div>
+              
+
+
+          </div>
+         
+        </div>
+      </div>
+     
+    </section>
+
+
+</section>
+
+
+
+
+

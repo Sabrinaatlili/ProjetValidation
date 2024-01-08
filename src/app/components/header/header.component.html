@@ -1,0 +1,62 @@
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky col-12">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                  
+
+                   <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        
+                        <li class="scroll-to-section"><a routerLink="" >Home</a></li>
+                        <li><a  routerLink="courses">Courses</a></li>
+                        <li><a routerLink="meeting">Teachers</a></li>
+                        <!-- Admin -->
+                        <li><a routerLink="admin"></a></li>
+                        <li class="has-sub">
+                            <a >ADMIN</a>
+                            <ul class="sub-menu">
+                                <li><a routerLink="admin">Dashboard Admin</a></li>
+                                <li><a routerLink="affecterStudent">Affecter Student</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- Teacher -->
+                       <!-- *ngIf="isLoggedIn() && user.role=='teacher'" -->
+                       <li class="has-sub">
+                       <a >Teacher</a>
+                            <ul class="sub-menu">
+                                <li><a routerLink="dashboardTeacher">Dashboard</a></li>
+                                <li><a routerLink="addCours">Add cours</a></li>
+                                <li><a routerLink="affecterNote">Affecter Note</a></li>
+
+                            </ul>
+                       </li>
+                            <li ><a routerLink="dashboardStudent">Dashboard Student</a></li>
+
+                        <!-- Login -->
+                        <li class="scroll-to-section" *ngIf="!isLoggedIn()"><a routerLink="login">Login</a></li> 
+                        <!-- Signup -->
+                        <li class="has-sub" *ngIf="!isLoggedIn()">
+                            <a >signup</a>
+                            <ul class="sub-menu">
+                                <li><a routerLink="student">Student</a></li>
+                                <li><a routerLink="teacher">teacher</a></li>
+                                <li><a routerLink="parent">parent</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- Logout -->
+                        <li ><a class="scroll-to-section" (click)="logout()" style="color: orange">Logout</a></li>
+                    </ul>        
+                    <a class='menu-trigger' style="color: red">
+                        <span >Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->

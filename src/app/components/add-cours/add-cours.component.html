@@ -1,0 +1,77 @@
+<section class="our-courses" id="courses">
+      
+    <div class=" text-center" >
+      <div class="section-heading align-center">
+        <h2> ADD COURS </h2>
+      </div>
+    </div>
+      
+    <section class="contact-us" id="contact">
+      <div class="container col-lg-8" style="margin-top: -100px;" >
+        <div class="row">
+          
+          <div class="col-lg-12 align-self-center" >
+           
+              <div class="col-lg-12" >
+                <div id="contact"  >
+                   <!-- ****************************** Add Cours Form Start ********************** -->
+                  <form  #addCoursForm="ngForm" (ngSubmit)="addCours()">
+                    <div class="row">
+                                           <!-- Name -->
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <input name="a" type="text" class="form-control" [(ngModel)]="cours.name" placeholder="Name" >
+                        </fieldset>
+                      </div>
+                       <!-- description -->
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <input name="b" type="text" class="form-control" [(ngModel)]="cours.description" placeholder="Description" >
+                        </fieldset>
+                      </div>
+                             
+                       <!-- durée -->
+                       <div class="col-lg-12">
+                        <fieldset>
+                          <input name="c" type="text" class="form-control" [(ngModel)]="cours.dure" placeholder="Durée" >
+                        </fieldset>
+                      </div>
+                    
+                      <!-- Select one teacher to this cours -->
+<!-- 
+                      <div class="form-group">
+                        <select name="teacher" id="teacherId"  class="form-control" (change)="selectTeacher($event)">
+                          <option [value]="teacher._id" *ngFor="let teacher of teachers" style="color: black;"> {{teacher.firstName}} </option>
+                        </select>
+                      </div>
+
+                        <span style="color: red;">{{ msgError}}</span> -->
+                    </div>
+                      <!-- Button Add Cours -->
+                   
+                    <div class="form-group text-center" style="margin-top: 10px;">
+                      <button type="submit" class="btn btn-danger " value="ADD COURS">Add Cours </button>
+                    </div>
+
+                  </form>
+                  
+                   <!-- ******************************  Form end  ********************** -->
+
+                </div>
+                
+              </div>
+              
+
+
+          </div>
+         
+        </div>
+      </div>
+     
+    </section>
+
+
+</section>
+
+
+
