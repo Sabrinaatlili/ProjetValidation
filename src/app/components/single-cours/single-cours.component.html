@@ -1,16 +1,20 @@
-<img src="assets/images/course-02.jpg" alt="Course One">
+<img [src]="coursInput.img" alt="Course One"  width="300px" height="300px" >
               <div class="down-content">
-                <h4>{{coursInput.name}} </h4>
+                <h4 class="cours" [ngStyle]=" { 'color': coursColor(coursInput.name)}">Cours Name : {{coursInput.name}} </h4>
                 <div class="info">
                     <p></p>
                   <div class="row">
                   
                       <ul class="text-center">
-                        <li>{{coursInput.dure}}</li>
-                        
+                        <li> Cours Durée : {{coursInput.dure}}</li>
                       </ul>
+                      <ul class="text-center">
+                        <li>Cours Description : {{coursInput.description}}</li>
+                      </ul>
+                      
                 
                     
                   </div>
                 </div>
               </div>
+             

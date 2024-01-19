@@ -31,7 +31,8 @@ export class AffecterStudentComponent implements OnInit {
 this.userService.getAllStudents().subscribe((data) => { this.students = data.students })
  // Get all couses pour afficher dans select option
 
- this.coursService.getAllCourses().subscribe((data) => { this.courses = data.courses })
+  this.coursService.getAllCoursesToAffecte().subscribe((data) => { this.courses = data.courses })
+
   }
   
   affecter(){
@@ -40,14 +41,12 @@ this.userService.getAllStudents().subscribe((data) => { this.students = data.stu
     this.student.studentId=this.idStudent;
     this.obj ={
       coursId :this.cours.coursId,
-      studentId:this.student.studentId
-    }
-    
-    this.coursService.affecterStudents(this.obj).subscribe((result)=>{
-      
-      console.log(result.msg);
-      
-    });
+      studentId:this.student.studentId }
+
+    this.coursService.affecterStudents(this.obj).subscribe((result)=>
+    {
+            console.log(result.msg);
+          });
    
   }
 

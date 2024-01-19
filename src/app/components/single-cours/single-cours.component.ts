@@ -7,9 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SingleCoursComponent implements OnInit {
   @Input() coursInput:any;
+  imgCours!:String;
   constructor() { }
 
   ngOnInit(): void {
+    this.imgCours=this.coursInput.img;
+    
+   
+  }
+  coursColor(a:string){
+   
+      return "red"
+  
   }
 
 }

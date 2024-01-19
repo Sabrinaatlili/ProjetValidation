@@ -1,0 +1,79 @@
+<section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row text-center ">
+
+      
+            <div class=" text-center" style="margin-top: 30px;">
+                <div class="section-heading align-center">
+                    <h2>   Cours Information </h2>
+                </div>
+            </div>
+
+
+            <section class="contact-us" id="contact">
+              <div class="container " style="margin-top: -100px;" >
+                <div class="row">
+
+           
+                  
+                    <div class=" row col-md-6 text-center ">
+                
+                        <div class="item col-lg-8 text-center" >
+            
+                            <app-single-cours [coursInput]="cours"> </app-single-cours>
+                            <div class="text-center mt-2">
+                                       <button class="btn btn-danger" (click)="delete(cours._id)"  style="margin-left: 5px;" *ngIf="user.role=='teacher' || user.role=='admin' "> Delete</button>
+                                       <button class="btn btn-info" (click)="DisplayNote(cours._id)"  style="margin-left: 5px;" *ngIf="user.role=='student'"> Voir Note </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class=" row col-md-12 text-center "  style="margin-top: 20px;" *ngIf="user.role=='teacher'" >
+                           
+                      <table class="table table-dark ">
+                       <thead >
+                         <tr class="table-success">
+                           <th scope="col">Student ID</th>
+                           <th scope="col">First Name</th>
+                           <th scope="col">Last Name</th>
+                           <th scope="col"> Adresse</th>
+                           <th scope="col">Email</th>
+                           <th scope="col">Tél </th>
+  
+                           <th scope="col">Actions</th>
+                         </tr>
+                       </thead>
+                       <tbody *ngFor="let student of students" >
+                         <tr >
+                           <td scope="row">{{student._id}}</td>
+                           <td >{{student.firstName}}</td>
+                           <td>{{student.firstName}}</td>
+                           <td>{{student.adr}}</td>
+                           <td>{{student.email}}</td>
+                           <td>{{student.tel}}</td>
+                           <td>
+                               <button type="button" class="btn btn-success" (click)="goToEdit()">Edit</button>
+                               <button type="button" class="btn btn-danger" (click)="goToDelete()" style="margin-left: 5px;">Delete</button>
+                               <button type="button" class="btn btn-warning" (click)="goToDisplay()" style="margin-left: 5px;">Display</button>
+                           </td>
+                         </tr>
+                       
+                       </tbody>
+                     </table>
+            
+  
+                   
+  
+                     </div>
+                </div>
+              </div>
+   
+             </section>
+
+
+
+    </div>
+  </div>
+</section>
+ 

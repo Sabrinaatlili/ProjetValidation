@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+   
   }
   decodeToken(token: string) {
     return jwt_decode(token);

@@ -12,28 +12,41 @@ userUrl: string="http://localhost:3000/users";
   login(user:any){
     return this.httpClient.post<{msg : any, token:string}>(this.userUrl +"/login", user);
   }
-   
+  
   getAllUsers(){
-  
-      return this.httpClient.get<{ users: any }>(this.userUrl);
-
+        return this.httpClient.get<{ users: any }>(this.userUrl);
   }
-  
-  getOneUser(){
+    getOneUser(id:any){
   
     return this.httpClient.get<{ user: any }>(this.userUrl+"/one");
+}
+getOneUserById(id:any){
+  
+  return this.httpClient.get<{ user: any }>(`${this.userUrl}/oneById/${id}`);
 }
 getTeacherById(id:any){
   return this.httpClient.get<{ teacher: any }>(`${this.userUrl}/${id}`);
 }
-Validate(obj:any){
+getStudentrById(id:any){
+  return this.httpClient.get<{ student: any }>(`${this.userUrl}/student/${id}`);
+}
+Validate(id:any){
   
-  return this.httpClient.put<{ isUpdated: any }>(this.userUrl+"/validateTeachers",obj);
+  return this.httpClient.get<{ isUpdated: boolean }>(`${this.userUrl}/validateTeacher/${id}`);
  
   }
   getAllTeachers(){
   
     return this.httpClient.get<{ teachers: any }>(this.userUrl+"/teachers");
+}
+getAllTeachersValidate(){
+  
+  return this.httpClient.get<{ teachers: any }>(this.userUrl+"/teachersValidate");
+}
+// get Teachers By Speciality
+getTeachersBySpeciality(teacher: any){
+  
+  return this.httpClient.post<{ teachers: any}>(this.userUrl+"/teachersBySpeciality",teacher);
 }
 getAllStudents(){
   
@@ -54,6 +67,7 @@ getAllStudents(){
     if (user.role==="teacher") {
       formData.append("speciality",user.speciality);
       formData.append("cv",cv);
+      formData.append("photo",photo);
       formData.append("status",user.status);
       
     } else if (user.role==="student") {
@@ -66,7 +80,19 @@ getAllStudents(){
   }
 
   editProfile(user:any){
-    return this.httpClient.put(this.userUrl, user);
+    return this.httpClient.put<{ isUpdated: any }>(this.userUrl, user);
   }
- 
+  delete(id:any){
+    return this.httpClient.delete<{msg:any}>(`${this.userUrl}/${id}`);
+  }
+  getMycourses(id:any){
+  
+    return this.httpClient.get<{ user: any }>( `${this.userUrl+"/myCourses"}/${id}`);
+  }
+   
+  searchChildByTel(user:any){
+    return this.httpClient.post<{student:any}>(this.userUrl+"/searchChild",user)
+  }
+
+
 }

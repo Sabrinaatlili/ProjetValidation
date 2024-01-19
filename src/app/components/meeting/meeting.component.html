@@ -1,4 +1,4 @@
-<section class="our-courses" id="courses">
+<!-- <section class="our-courses" id="courses">
     <div class="container">
 
       <div class=" text-center" style="margin-top: 30px;">
@@ -9,16 +9,37 @@
 
        
 
-       <div class="row ">
+       <div class="row "> -->
+        <section class="our-courses" id="courses">
+          <div class="container">
+            <div class="row">
+      
+            
+                  <div class=" text-center" style="margin-top: 30px;">
+                    <div class="section-heading align-center">
+                      <h2> Our Teachers  </h2>
+                    </div>
+                  </div>
+      
+              
+    <div class="row">
 
-      <div class="col col-md-3" *ngFor="let teacher of teachers">
-          
-          <app-teachers [teacherInput]="teacher"></app-teachers>
-        </div>
+          <div class="item col-md-4" *ngFor="let teacher of teachers">
+              
+              <app-teachers [teacherInput]="teacher"></app-teachers>
+            </div>
+
+
+
+        
       </div>
+    </div>
+  </div>
+</section>
+      <!-- </div>
        
         
      
       
     </div>
-  </section>
+  </section> -->

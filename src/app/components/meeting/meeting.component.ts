@@ -7,11 +7,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./meeting.component.css']
 })
 export class MeetingComponent implements OnInit {
-
-  constructor(private userService :UserService) { }
   teachers:any=[];
+  constructor(private userService :UserService) { }
+ 
   ngOnInit(): void {
-    this.userService.getAllTeachers().subscribe((data)=>{ 
+    this.userService.getAllTeachersValidate().subscribe((data)=>{ 
       console.log("here is response from BE ",data.teachers);
       
       this.teachers=data.teachers});

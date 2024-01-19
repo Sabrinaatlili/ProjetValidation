@@ -20,9 +20,9 @@
         <td>{{student.email}}</td>
          <td>{{student.tel}}</td>
         <td>
-            <button type="button" class="btn btn-success" (click)="goToEdit()">Edit</button>
-            <button type="button" class="btn btn-danger" (click)="goToDelete()" style="margin-left: 5px;">Delete</button>
-            <button type="button" class="btn btn-warning" (click)="goToDisplay()" style="margin-left: 5px;">Display</button>
+        
+            <button type="button" class="btn btn-danger" (click)="goToDelete(student._id)" style="margin-left: 5px;">Delete</button>
+            <button type="button" class="btn btn-warning" (click)="goToDisplay(student._id)" style="margin-left: 5px;">Display</button>
         </td>
       </tr>
      

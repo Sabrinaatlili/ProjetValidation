@@ -21,13 +21,8 @@ export class LoginComponent implements OnInit {
   login(){
     
       console.log("here is my function logIn", this.user);
-    
-      // Condition Pour connaitre le type de login (Email ou Tél )
-     
-          console.log("here is my function logIn", this.user);
-          
-          // Appel du service pour envoyer au BE
-  
+    // Appel du service 
+   
       this.userService.login(this.user).subscribe((data) => {
   
         console.log("Here response from BE ", data.msg, data.token);
@@ -54,18 +49,15 @@ export class LoginComponent implements OnInit {
             // if (user.status== 'validate') {
             
               this.router.navigate(['dashboardTeacher']);
-          //  } else {
-          //     this.errorMsg="Teacher not validate";
-            // this.router.navigate(['dashboardTeacher']); 
-          //  }
+        
 
 
           } else if (user.role == "parent") {
             console.log("Here user/token after decoding : ", user);
-            this.router.navigate(['dashboardTeacher']); 
+            this.router.navigate(['']); 
           } else {
             console.log("Here user/token after decoding : ", user);
-            this.router.navigate(['dashboard']);
+            this.router.navigate(['admin']);
           } 
         } else {
           this.errorMsg = data.msg;

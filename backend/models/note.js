@@ -5,11 +5,11 @@ const noteSchema =mongoose.Schema({
  note: Number,
  evaluation :String,
 
- student: {
+ studentId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
     } ,
-    cours:
+    coursId:
         {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Cours'

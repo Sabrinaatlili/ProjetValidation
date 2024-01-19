@@ -26,9 +26,15 @@ import { ParentTableComponent } from './components/parent-table/parent-table.com
 import { DashboardStudentComponent } from './components/dashboard-student/dashboard-student.component';
 import { SingleCoursComponent } from './components/single-cours/single-cours.component';
 import { AffecterStudentComponent } from './components/affecter-student/affecter-student.component';
-import { ValidateComponent } from './components/validate/validate.component';
 import { EditTeacherComponent } from './components/edit-teacher/edit-teacher.component';
 import { NoteComponent } from './components/note/note.component';
+import { DashboardParentComponent } from './components/dashboard-parent/dashboard-parent.component';
+import { CoursInfoComponent } from './components/cours-info/cours-info.component';
+import { DetailNoteComponent } from './components/detail-note/detail-note.component';
+import { UniversityComponent } from './components/university/university.component';
+import { SearchTeacherComponent } from './components/search-teacher/search-teacher.component';
+import { SearchChildComponent } from './components/search-child/search-child.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -54,9 +60,15 @@ import { NoteComponent } from './components/note/note.component';
     DashboardStudentComponent,
     SingleCoursComponent,
     AffecterStudentComponent,
-    ValidateComponent,
     EditTeacherComponent,
-    NoteComponent
+    NoteComponent,
+    DashboardParentComponent,
+    CoursInfoComponent,
+    DetailNoteComponent,
+    UniversityComponent,
+    SearchTeacherComponent,
+    SearchChildComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,

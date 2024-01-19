@@ -1,0 +1,90 @@
+
+<section class="our-courses" id="courses">
+    
+        <div class=" text-center" style="margin-top: 30px;" >
+            <div class="section-heading ">
+                <h2>  INTERNATIONAL UNIVERSITIES </h2>
+            </div>
+        </div>
+  
+        
+
+        <div class="text-center" style="margin-left: 500px;">
+            <section class="contact-us " id="contact">
+                    
+                    <div class="col-lg-8 text-center " >
+
+                            <div class="col-lg-12">
+                                <div id="contact"  >
+                                    <form [formGroup]="universiteForm">
+                                    
+                                            <div class=" form-group">
+                                                <input type="text" name="a" formControlName="country"  class="form-control col-lg-9" placeholder="Country"> <button class="btn btn-danger col-lg-3 "  value="search" (click)="search()"> Search</button>
+                                            
+                                                <div *ngIf="universiteForm.controls['country'].invalid &&
+                                                    (universiteForm.controls['country'].touched || universiteForm.controls['country'].dirty)">
+                                                    <div *ngIf="universiteForm.controls['country'].errors?.['required']" style="color: red;">
+                                                    country is required
+                                                    </div>
+                                                </div>
+
+                                        
+                                            </div>
+                                    
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+            
+            </section> 
+        </div> 
+     
+            <!-- Result Unicersity Search By County  -->
+            <div class="text-center" style="margin-left: 500px;" *ngIf="universiteResult">
+            <section class="contact-us" id="contact">
+                
+                    <div class="col-lg-8 text-center " >
+
+                        <div class="col-lg-12" >
+                        <div id="contact"  >
+                            <table class="table caption-top" >
+
+                                
+                                <thead>
+                                <tr>
+                                
+                                    <th scope="col">Country</th>
+                                    <th scope="col">University Name</th>
+                                    <th scope="col">Speciality </th>
+                                
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    
+                                    <td>{{ universiteResult.country }}</td>
+                                    <td>{{ universiteResult.name }}</td>
+                                    <td>{{ universiteResult.domains }}</td>
+                                    
+                                </tr>
+
+                                
+                                
+                                </tbody>
+
+                                
+                            </table>
+
+
+                        </div>
+                        </div>
+                    </div>
+               
+           
+            </section> 
+        </div> 
+        
+</section>
+        
+
+   

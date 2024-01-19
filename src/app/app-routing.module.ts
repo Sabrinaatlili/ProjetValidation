@@ -12,9 +12,18 @@ import { AddCoursComponent } from './components/add-cours/add-cours.component';
 import { DashboardTeacherComponent } from './components/dashboard-teacher/dashboard-teacher.component';
 import { DashboardStudentComponent } from './components/dashboard-student/dashboard-student.component';
 import { AffecterStudentComponent } from './components/affecter-student/affecter-student.component';
-import { ValidateComponent } from './components/validate/validate.component';
-import { EditTeacherComponent } from './components/edit-teacher/edit-teacher.component';
+
 import { NoteComponent } from './components/note/note.component';
+import { DashboardParentComponent } from './components/dashboard-parent/dashboard-parent.component';
+import { CoursInfoComponent } from './components/cours-info/cours-info.component';
+import { DetailNoteComponent } from './components/detail-note/detail-note.component';
+import { UniversityComponent } from './components/university/university.component';
+import { SearchTeacherComponent } from './components/search-teacher/search-teacher.component';
+import { SearchChildComponent } from './components/search-child/search-child.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { EditTeacherComponent } from './components/edit-teacher/edit-teacher.component';
+
+
 
 const routes: Routes = [
 // http://localhost:4200: url de base
@@ -28,14 +37,20 @@ const routes: Routes = [
 {path:"admin",component:AdminComponent},
 {path:"dashboardTeacher",component:DashboardTeacherComponent},
 {path:"dashboardStudent",component:DashboardStudentComponent},
+{path:"dashboardParent",component:DashboardParentComponent},
 {path:"addCours",component:AddCoursComponent},
 {path:"teacher",component:SignupComponent},
 {path:"student",component:SignupComponent},
 {path:"parent",component:SignupComponent},
 {path:"affecterStudent",component:AffecterStudentComponent},
-{path:"validateTeacher/:id",component:ValidateComponent},
-{path:"editTeacher/:id",component:EditTeacherComponent},
+{path:"editUser",component:EditTeacherComponent},
 {path:"affecterNote",component:NoteComponent},
+{path:"coursInfo/:id",component:CoursInfoComponent},
+{path:"detailsNote/:id",component:DetailNoteComponent},
+{path:"university",component:UniversityComponent},
+{path:"searchTeacherBySpeciality",component:SearchTeacherComponent},
+{path:"searchStudentByTel",component:SearchChildComponent},
+{path:"userInfo/:id",component:UserInfoComponent},
 
 ];
 

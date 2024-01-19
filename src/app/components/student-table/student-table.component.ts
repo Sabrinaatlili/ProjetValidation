@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class StudentTableComponent implements OnInit {
   students:any=[];
-  constructor(private userService :UserService) { }
+  constructor(private userService :UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.userService.getAllStudents().subscribe((data)=>{ 
@@ -17,8 +19,13 @@ export class StudentTableComponent implements OnInit {
       this.students=data.students})
       }
   
-  goToEdit(){}
-  goToDelete(){}
-  goToDisplay(){}
+  goToEdit(id: any){
+
+    this.router.navigate([`editUser/${id}`]);
+  }
+  goToDelete(id: any){}
+  goToDisplay(id: any){
+    this.router.navigate([`userInfo/${id}`]);
+  }
 
 }

@@ -47,6 +47,7 @@ export class SignupComponent implements OnInit {
       } else if (this.path === "/teacher") {
         this.signupForm.addControl('speciality', new FormControl("", [Validators.required, Validators.minLength(5)]));
         this.signupForm.addControl('cv', new FormControl(""));
+        this.signupForm.addControl('photo', new FormControl(""));
       
          }
     
@@ -62,12 +63,12 @@ export class SignupComponent implements OnInit {
     } else if (this.path == "/teacher") {
       this.signupForm.value.role = "teacher";
       this.signupForm.value.status = "not validate";
-    } else {
+    } else if (this.path == "/signupAdmin"){
       this.signupForm.value.role = "admin"
     } 
        //  form Template Diven Form 
     this.userService.signup(this.signupForm.value, this.signupForm.value.photo, this.signupForm.value.cv).subscribe((result)=>{
-      console.log("Here is response from BE ",result.msg);
+      console.log("Here is response from BE ",result);
       this.msgError=result.msg;
                  
     });

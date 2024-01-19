@@ -1,0 +1,104 @@
+
+<section class="our-courses" id="courses">
+    
+    <div class=" text-center" style="margin-top: 30px;" >
+        <div class="section-heading ">
+            <h2>  search Child </h2>
+        </div>
+    
+    </div>
+
+        <div class=" text-center"style="margin-left: 500px;">
+        
+            <section class="contact-us " id="contact">
+                    
+                    <div class="col-lg-8 text-center " >
+
+                            <div class="col-lg-12">
+                                <div id="contact"  >
+                                    <form #searchStudent="ngForm"  (ngSubmit)="search()">
+                                    
+                                            <div class=" form-group">
+
+                                                <input type="number" class="form-control col-lg-9" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.tel" #tel="ngModel" [ngClass]="{ 'is-invalid': searchStudent.submitted && tel.invalid }"    placeholder="tel" required minlength="8">
+                                                
+                                            
+                                                <button class="btn btn-danger col-lg-3 "  value="search"> Search</button>
+
+                                                <div *ngIf="searchStudent.submitted && tel.invalid" class="invalid-feedback" >
+                                                    <p *ngIf="tel.errors?.['required']" style="color: red; margin-top: 20px;">Tél Student is required</p>
+                                                    <p *ngIf="tel.errors?.['minlength']" style="color: red; margin-top: 20px;">Tél Student has at least 5 chars</p>
+                                                
+                                                </div>
+                                            
+                                        
+                                            </div>
+                                    
+                                    </form>
+                                    
+                                </div>
+                                <span style="color: red; margin-top: 80px;"> {{ msgError}}</span>
+                            </div>
+                    </div>
+            
+            </section> 
+            
+        
+        </div>
+
+       <div class="row" >
+            <div class=" text-center" style="margin-top: 50px;"  *ngIf="test">
+                <div class="section-heading ">
+                    <h2>  COURSES Child {{student.firstName}} </h2>
+                </div>
+            
+            </div>
+        
+
+            <div class="item col-md-12" *ngIf="test">
+       
+        <table class="table table-dark ">
+            <thead >
+              <tr class="table-success">
+                <th scope="col">Cours ID</th>
+                <th scope="col"> Name</th>
+                <th scope="col">description</th>
+                <th scope="col">Durée</th>
+                <th scope="col">teacher</th>
+                <th scope="col">Note</th>
+                <th scope="col">Evaluation</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let cours of courses" >
+              <tr >
+                <td >{{cours._id}}</td>
+                <td> {{cours.name}}</td>
+                <td>{{cours.description}}</td>
+                <td>{{cours.dure}}</td>
+                <td>{{teacher.firstName}}</td>
+                 <td>{{note.note}}</td>
+                <td>{{note.evaluation}}</td>
+                <!-- <td>{{cours.teacher.firstName}} {{cours.teacher.lastName}}</td> -->
+                
+                <td>
+                   
+                    <button type="button" class="btn btn-success" (click)="edit(cours._id)" style="margin-left: 5px;" *ngIf="user.role=='teacher' ">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="delete(cours._id)" style="margin-left: 5px;" *ngIf="user.role=='admin' || user.role=='teacher' ">Delete</button>
+                    <button type="button" class="btn btn-warning" (click)="display(cours._id)" style="margin-left: 5px;">Display</button>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+          
+            
+          </div>
+
+
+
+      
+     </div>
+
+
+</section>

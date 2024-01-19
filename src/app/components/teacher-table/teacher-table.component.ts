@@ -8,31 +8,45 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./teacher-table.component.css']
 })
 export class TeacherTableComponent implements OnInit {
-  teachers:any=[];
-  newStatus:String="validate";
+  teachers: any = [];
+  newStatus: String = "validate";
+  errorMsg!: String;
 
-    constructor(private userService :UserService,
-      private router:Router) { }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.userService.getAllTeachers().subscribe((data)=>{ 
-      console.log("here is response from BE ",data.teachers);
-      
-      this.teachers=data.teachers})
-      }
- 
+    this.userService.getAllTeachers().subscribe((data) => {
+      console.log("here is response from BE ", data.teachers);
 
-  goToEdit(id:any){
-    this.router.navigate([`editTeacher/${id}`]);
+      this.teachers = data.teachers
+    })
+  }
+  goToEdit(id: any) {
+    this.router.navigate([`editUser/${id}`]);
+
+  }
+  goToDelete(id: any) {
+  
+    this.userService.delete(id).subscribe((response) => {
+      console.log("Here response from BE ", response.msg);
+      
+    })
+    this.router.navigate(['admin']);
+  }
+  goToDisplay(id: any) { 
+    this.router.navigate([`userInfo/${id}`]); 
+
+  }
+
+  valider(id: any) {
+    this.userService.Validate(id).subscribe((response) => {
+      // console.log("teacher is validate", result.isUpdated);
+      if (response.isUpdated) {
+        this.router.navigate(['admin'])
+      }
+              
+      })
    
   }
-  goToDelete(id:any){}
-  goToDisplay(id:any){}
- 
-  valider(id:number){
-    // sessionStorage.setItem("idTeacher",id)
- this.router.navigate([`validateTeacher/${id}`]);
-      
-
-    }
-  }
+}

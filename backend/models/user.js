@@ -15,10 +15,15 @@ const userSchema =mongoose.Schema({
  telStudent: Number,
  status: String,
  courses:
-        [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Cours'
-        } ]
+      [ 
+        { type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cours'},
+              
+      ],
+  
+   notes :[{ type: mongoose.Schema.Types.ObjectId,
+    ref: 'Note'
+  }  ]    
 
 });
 // create Match Model

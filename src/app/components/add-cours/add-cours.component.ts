@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CoursService } from 'src/app/services/cours.service';
 import jwt_decode from 'jwt-decode';
@@ -15,29 +15,52 @@ export class AddCoursComponent implements OnInit {
   teacher:any={};
   teachers: any = [];
   msgError:any;
+  imagePreviewCours:any;
+  img!:any;
+ 
 
-  constructor(private coursService: CoursService,
+  constructor(private formBuilder: FormBuilder,
+    private coursService: CoursService,
        private router : Router) { }
 
   ngOnInit(): void {
-
+    
   }
   // Déclaration Méthode AddCours
   
   addCours(){
-    console.log("here is my function add Cours", this.cours);
+    
+    console.log("here is my function add Cours", this.cours,this.img);
 
   let token= sessionStorage.getItem("token");
   let user: any = this.decodeToken(token);
   this.cours.teacher=user.id;
-
-   this.coursService.addCours(this.cours).subscribe((result) => {
+  
+   this.coursService.addCours(this.cours,this.img).subscribe((result) => {
     console.log('Here is result of add Cours from BE : ', result.msg);
+    this.router.navigate(['dashboardTeacher']);
       });
-      this.router.navigate(['dashboardTeacher']);
+    
 }
 // déclaration Decodage token
   decodeToken(token: any) {
     return jwt_decode(token);
+  }
+  onImageSelected(event: Event) {
+    const fileInput = event.target as HTMLInputElement;
+    // const file = (fileInput.files as FileList)[0];
+    const files = fileInput.files;
+
+    if (files && files.length> 0) {
+      const file = files[0];
+      this.img=file;
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagePreviewCours = reader.result as string
+    };
+    
+    reader.readAsDataURL(file);
+  }
   }
 }

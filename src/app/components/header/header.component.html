@@ -8,23 +8,36 @@
 
                    <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        
+                         <!-- welcome user -->
+                         <li *ngIf="isLoggedIn()" class="scroll-to-section"  style="margin-right: 100px"><a style="color: orange" > Welcome  {{user.fName}}  {{user.lName}}</a></li> 
+                       
+                       
+                       
                         <li class="scroll-to-section"><a routerLink="" >Home</a></li>
                         <li><a  routerLink="courses">Courses</a></li>
                         <li><a routerLink="meeting">Teachers</a></li>
-                        <!-- Admin -->
-                        <li><a routerLink="admin"></a></li>
-                        <li class="has-sub">
-                            <a >ADMIN</a>
+                          <!-- Admin -->
+                        <li class="has-sub" *ngIf="isLoggedIn() && user.role=='admin'">
+                            <a routerLink="admin" >ADMIN</a>
                             <ul class="sub-menu">
                                 <li><a routerLink="admin">Dashboard Admin</a></li>
                                 <li><a routerLink="affecterStudent">Affecter Student</a></li>
 
                             </ul>
                         </li>
+                        <!-- Edit Profile -->
+                        <li *ngIf="isLoggedIn()" class="scroll-to-section"  style="margin-right: 100px" routerLink="editUser" ><a  >Edit Profile</a></li> 
+                          <!-- Dashboard Student -->
+                          <li *ngIf="isLoggedIn() && user.role=='student'"><a routerLink="dashboardStudent">Dashboard Student</a></li>
+                           <!-- Search Teacher By Speciality -->
+                        <li class="scroll-to-section" ><a routerLink="searchTeacherBySpeciality">Search Teacher</a></li> 
+                        <li class="scroll-to-section" *ngIf="isLoggedIn() && user.role=='parent'"><a routerLink="searchStudentByTel">Search Student</a></li> 
+                        <li class="scroll-to-section">  <a routerLink="university"> INTERNATIONAL university </a></li> 
+                        
+                      
                         <!-- Teacher -->
-                       <!-- *ngIf="isLoggedIn() && user.role=='teacher'" -->
-                       <li class="has-sub">
+                     
+                       <li class="has-sub" *ngIf="isLoggedIn() && user.role=='teacher'">
                        <a >Teacher</a>
                             <ul class="sub-menu">
                                 <li><a routerLink="dashboardTeacher">Dashboard</a></li>
@@ -33,10 +46,11 @@
 
                             </ul>
                        </li>
-                            <li ><a routerLink="dashboardStudent">Dashboard Student</a></li>
+                      
 
                         <!-- Login -->
                         <li class="scroll-to-section" *ngIf="!isLoggedIn()"><a routerLink="login">Login</a></li> 
+                       
                         <!-- Signup -->
                         <li class="has-sub" *ngIf="!isLoggedIn()">
                             <a >signup</a>
@@ -48,11 +62,11 @@
                             </ul>
                         </li>
                         <!-- Logout -->
-                        <li ><a class="scroll-to-section" (click)="logout()" style="color: orange">Logout</a></li>
+                        <li *ngIf="isLoggedIn()"> <a class="scroll-to-section" (click)="logout()" style="color: orange" >Logout</a></li>
                     </ul>        
-                    <a class='menu-trigger' style="color: red">
+                    <!-- <a class='menu-trigger' style="color: red">
                         <span >Menu</span>
-                    </a>
+                    </a> -->
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>

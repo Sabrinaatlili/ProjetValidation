@@ -1,6 +1,6 @@
 <section class="our-courses" id="courses">
       
-    <div class=" text-center" style="margin-top: 3ng0px;">
+    <div class=" text-center" style="margin-top: 30px;">
       <div class="section-heading align-center">
         <h2> LOGIN </h2>
       </div>
@@ -21,13 +21,10 @@
                        <!-- email / Tél -->
                       <div class="col-lg-12">
                         <fieldset>
-                          <input name="a" type="text" class="form-control" [(ngModel)]="user.login" placeholder="Tél / Email" pattern="^\d{8}$" >
+                          <input name="a" type="email" class="form-control" [(ngModel)]="user.login" placeholder="Tél / Email" pattern="^\d{8}$" >
                         </fieldset>
                       </div>
-                      <!-- <div *ngIf="loginForm.controls['user.login'].errors?.['pattern'] && loginForm.controls['user.login'].touched">
-                        Le numéro doit contenir exactement huit chiffres.
-                      </div> -->
-                      
+                                         
                        <!-- PWD -->
                       <div class="col-lg-12">
                         <fieldset>
@@ -36,14 +33,8 @@
                       </div>
                                        
                     </div>
-                      <!-- Button Sign Up -->
+                      <!-- Button Login Up -->
                    
-
-                    <!-- <div class="main-button-red text-center">
-                      <div class="scroll-to-section"> <a style="color: white;" > LOGIN </a></div>
-                    </div> -->
-
-
                     <div class="form-group text-center">
                       <button type="submit" class="btn btn-danger " value="">LOGIN</button>
                     </div>

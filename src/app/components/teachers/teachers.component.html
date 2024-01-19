@@ -1,8 +1,8 @@
 
-          
+<!-- 
   <div class="item col-lg-12" style="margin-top: 20px;" >
 
-    <img src="assets/images/teacher-1.jpg" alt="Course One">
+  <img [src]="imgTeacher" alt="Course One">
     <div class="down-content">
       <h4>{{teacherInput.firstName}} {{teacherInput.lastName}}</h4>
       <div class="info">
@@ -14,4 +14,22 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>  -->
+
+<img [src]="teacherInput.photo" alt="Course One" width="300px" height="300px" >
+              <div class="down-content">
+                <h4>{{teacherInput.firstName}} {{teacherInput.lastName}}</h4>
+                <div class="info">
+                    <p></p>
+                  <div class="row">
+                  
+                      <ul class="text-center">
+                        <li>{{teacherInput.tel}}</li>
+                        <li>{{teacherInput.adr}}</li>
+                        
+                      </ul>
+                
+                    
+                  </div>
+                </div>
+              </div>

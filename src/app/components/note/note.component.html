@@ -17,10 +17,15 @@
                    <!-- ****************************** Add Cours Form Start ********************** -->
                   <form  #affecterForm="ngForm" (ngSubmit)="affecterNote()">
                     <div class="row">
-                                        
-                    
+                      
+                      <!-- Select one Cours to affect -->
 
-
+                      <div class="form-group" style="margin-top: 30px;">
+                        <select name="coursId" id=""  class="form-control" (change)="selectCours($event)">
+                          <option [value]="cours._id" *ngFor="let cours of courses" style="color: black;"> {{cours.name}} </option>
+                        </select>
+                      </div>
+                        
                       <!-- Select one Student to affect -->
 
                       <div class="form-group" style="margin-top: 30px;">
@@ -29,14 +34,7 @@
                         </select>
                       </div>
 
-
-                      <!-- Select one Cours to affect -->
-
-                      <div class="form-group" style="margin-top: 30px;">
-                        <select name="coursId" id=""  class="form-control" (change)="selectCours($event)">
-                          <option [value]="cours._id" *ngFor="let cours of courses" style="color: black;"> {{cours.name}} </option>
-                        </select>
-                      </div>
+                      
 
 
                         <!-- Note -->

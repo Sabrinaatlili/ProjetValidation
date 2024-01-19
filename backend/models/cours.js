@@ -5,6 +5,7 @@ const coursSchema =mongoose.Schema({
  name: String,
  description :String,
  dure: String,
+ img:String,
  teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
@@ -14,6 +15,9 @@ const coursSchema =mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
         }] ,
+    note :{ type: mongoose.Schema.Types.ObjectId,
+            ref: 'Note'
+          }
 
 
 });

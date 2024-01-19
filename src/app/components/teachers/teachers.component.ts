@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-teachers',
@@ -8,11 +8,17 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class TeachersComponent implements OnInit {
   @Input() teacherInput: any;
+  imgTeacher!:String;
    constructor() { }
 
   ngOnInit(): void {
+    //  this.imgTeacher=this.teacherInput.photo
+  //  console.log(this.imgTeacher);
    
+
+    
   }
+ 
   
   }
 

@@ -36,6 +36,20 @@
                           <input name="c" type="text" class="form-control" [(ngModel)]="cours.dure" placeholder="Durée" >
                         </fieldset>
                       </div>
+
+                       <!-- Photo cours -->
+          
+            <div class="form-group" style="visibility: hidden;">
+              <input type="file" class="form-control"  #filePicker (change)="onImageSelected($event)">
+            </div>
+            <div class="text-center">
+              <button class="btn btn-success" (click)="filePicker.click()" > Select cours Photo</button>
+  
+            </div>
+            <div class="text-center" style="margin-top: 20px;">
+              <img [src]="imagePreviewCours" alt="" width="200px" height="200px">
+            </div>
+       
                     
                       <!-- Select one teacher to this cours -->
 <!-- 
