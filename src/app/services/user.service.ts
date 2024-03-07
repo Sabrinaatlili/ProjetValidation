@@ -30,6 +30,7 @@ getTeacherById(id:any){
 getStudentrById(id:any){
   return this.httpClient.get<{ student: any }>(`${this.userUrl}/student/${id}`);
 }
+
 Validate(id:any){
   
   return this.httpClient.get<{ isUpdated: boolean }>(`${this.userUrl}/validateTeacher/${id}`);

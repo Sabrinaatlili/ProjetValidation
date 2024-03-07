@@ -42,7 +42,8 @@ export class TeacherTableComponent implements OnInit {
   valider(id: any) {
     this.userService.Validate(id).subscribe((response) => {
       // console.log("teacher is validate", result.isUpdated);
-      if (response.isUpdated) {
+      if (response.isUpdated==true) {
+
         this.router.navigate(['admin'])
       }
               

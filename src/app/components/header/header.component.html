@@ -1,19 +1,20 @@
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky col-12">
-    <div class="container ">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
+  <header class="header-area header-sticky ">
+                    
+            
+                <nav class="main-nav text-center" style="margin-right: 400px; ">
                   
 
                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                         <!-- welcome user -->
-                         <li *ngIf="isLoggedIn()" class="scroll-to-section"  style="margin-right: 100px"><a style="color: orange" > Welcome  {{user.fName}}  {{user.lName}}</a></li> 
+                  
+                    <ul class="nav" >
+                       <li class="scroll-to-section" > <a ><h4 >Smart Education</h4></a></li>
+                          <!-- welcome user -->
+                         <li *ngIf="isLoggedIn()" class="scroll-to-section"  ><a style="color: orange" > Welcome  {{user.fName}}  {{user.lName}}</a></li> 
                        
                        
                        
-                        <li class="scroll-to-section"><a routerLink="" >Home</a></li>
+                        <li class="scroll-to-section" ><a routerLink=""  >Home</a></li>
                         <li><a  routerLink="courses">Courses</a></li>
                         <li><a routerLink="meeting">Teachers</a></li>
                           <!-- Admin -->
@@ -26,13 +27,14 @@
                             </ul>
                         </li>
                         <!-- Edit Profile -->
-                        <li *ngIf="isLoggedIn()" class="scroll-to-section"  style="margin-right: 100px" routerLink="editUser" ><a  >Edit Profile</a></li> 
-                          <!-- Dashboard Student -->
-                          <li *ngIf="isLoggedIn() && user.role=='student'"><a routerLink="dashboardStudent">Dashboard Student</a></li>
+                        <li *ngIf="isLoggedIn()" class="scroll-to-section"   routerLink="editUser" ><a  >Edit Profile</a></li> 
+                       <!-- INTERNATIONAL university with API server -->
+                       <li class="scroll-to-section">  <a routerLink="university"> INTERNATIONAL university </a></li>
                            <!-- Search Teacher By Speciality -->
                         <li class="scroll-to-section" ><a routerLink="searchTeacherBySpeciality">Search Teacher</a></li> 
-                        <li class="scroll-to-section" *ngIf="isLoggedIn() && user.role=='parent'"><a routerLink="searchStudentByTel">Search Student</a></li> 
-                        <li class="scroll-to-section">  <a routerLink="university"> INTERNATIONAL university </a></li> 
+                        
+                        <!-- Dashboard Student -->
+                        <li *ngIf="isLoggedIn() && user.role=='student'"><a routerLink="dashboardStudent">Dashboard Student</a></li>
                         
                       
                         <!-- Teacher -->
@@ -48,8 +50,6 @@
                        </li>
                       
 
-                        <!-- Login -->
-                        <li class="scroll-to-section" *ngIf="!isLoggedIn()"><a routerLink="login">Login</a></li> 
                        
                         <!-- Signup -->
                         <li class="has-sub" *ngIf="!isLoggedIn()">
@@ -61,6 +61,12 @@
 
                             </ul>
                         </li>
+                             <!-- Search Student -->
+                             <li class="scroll-to-section" *ngIf="isLoggedIn() && user.role=='parent'"><a routerLink="searchStudentByTel">Search Student</a></li> 
+                       
+                         <!-- Login -->
+                         <li class="scroll-to-section" *ngIf="!isLoggedIn()"><a routerLink="login">Login</a></li> 
+                       
                         <!-- Logout -->
                         <li *ngIf="isLoggedIn()"> <a class="scroll-to-section" (click)="logout()" style="color: orange" >Logout</a></li>
                     </ul>        
@@ -69,8 +75,7 @@
                     </a> -->
                     <!-- ***** Menu End ***** -->
                 </nav>
-            </div>
-        </div>
-    </div>
+            
+       
 </header>
 <!-- ***** Header Area End ***** -->

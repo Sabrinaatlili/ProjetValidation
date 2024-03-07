@@ -140,16 +140,7 @@
                   <input name="j" type="text" class="form-control" formControlName="speciality" placeholder="Speciality">
                 </fieldset>
               </div>
-              <!--  Test Teacher Speciality -->
-              <!-- <div *ngIf="signupForm.controls['speciality'].invalid && 
-              (signupForm.controls['speciality'].touched || signupForm.controls['speciality'].dirty)" style="color: red;">
-              <div *ngIf="signupForm.controls['speciality'].errors?.['required'] " > 
-                  Speciality is required
-              </div>
-              <div *ngIf="signupForm.controls['speciality'].errors?.['minlength'] "> 
-                  Speciality must be have at least 5 chars
-              </div>
-              </div> -->
+             
               <!-- Photo Student / Teacher -->
               <div *ngIf="path=='/student' || path=='/teacher' ">
               <div class="form-group" style="visibility: hidden;">
@@ -160,7 +151,8 @@
 
               </div>
               <div class="text-center" style="margin-top: 20px;">
-                <img [src]="imagePreview" alt="" width="200px" height="200px">
+                <img [src]="imagePreview" alt="">
+                <!-- width="200px" height="200px" -->
               </div>
             </div>
             <!-- CV -->
@@ -173,7 +165,8 @@
 
               </div>
               <div class="text-center" style="margin-top: 20px;">
-                <img [src]="cvPreview" alt="" width="200px" height="200px">
+                <img [src]="cvPreview" alt="" >
+                <!-- width="200px" height="200px" -->
               </div>
             </div>
           

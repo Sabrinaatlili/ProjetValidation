@@ -141,6 +141,19 @@ app.get("/users", (req, res) => {
     // res.json({teams: teamsData});
     User.find().then((users) => { res.json({ users: users }) });
 });
+//  Busniss Logic :  Validate Teacher
+app.get("/users/validateTeacher/:id", (req, res) => {
+    console.log("Here  into BL : Validate Teacher");
+
+    User.updateOne({ _id:req.params.id  },{status: "validate"}).then((updateResponse) => {
+        console.log("Here response after update", updateResponse);
+        if (updateResponse.nModified == 1) {
+            res.json({ isUpdated: true });
+        } else {
+            res.json({ isUpdated: false });
+        }
+    })
+});
 //  Busniss Logic : Get All Teachers Validate
 app.get("/users/teachersValidate", (req, res) => {
     console.log("Here  into BL : Get All Teachers");
